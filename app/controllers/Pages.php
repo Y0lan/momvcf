@@ -1,18 +1,18 @@
 <?php
 
 
-class Pages extends  Controller {
+class Pages extends Controller {
     public function __construct(){
     }
 
     public function index(){
-        $this->view('hello');
-
+        $data = [
+            'title' => 'Welcome'
+        ];
+        $this->view('pages/index', $data);
     }
 
-    public function about($id = NULL){
-        if($id != NULL)
-            echo $id;
-        else echo "fu";
+    public function about(){
+        $this->view('pages/about');
     }
 }
